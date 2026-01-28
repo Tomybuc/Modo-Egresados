@@ -1,0 +1,218 @@
+/* --- VARIABLES --- */
+:root {
+    --color-azul: #3667B1;
+    --color-crema: #fff7f1;
+    --fuente-titulo: 'Irish Grover', system-ui;
+    --fuente-parrafo: 'Inria Serif', serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--color-crema);
+    color: var(--color-azul);
+    font-family: var(--fuente-parrafo);
+    overflow-x: hidden;
+}
+
+/* --- HEADER DE VIDRIO --- */
+.header-vidrio {
+    position: fixed; top: 0; left: 0; width: 100%;
+    padding: 10px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 1000;
+    background: rgba(255, 247, 241, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.logo-header { width: 50px; }
+.texto-header { font-family: var(--fuente-titulo); font-size: 1rem; color: var(--color-azul); }
+
+/* --- SECCIONES GENERALES --- */
+.seccion {
+    width: 100%;
+    display: flex; flex-direction: column; align-items: center;
+    position: relative;
+    padding: 100px 0;
+}
+.compacto { padding: 60px 0; min-height: auto; }
+
+.bg-crema { background-color: var(--color-crema); color: var(--color-azul); }
+.bg-azul { background-color: var(--color-azul); color: var(--color-crema); }
+.texto-crema { color: var(--color-crema) !important; }
+.color-azul { color: var(--color-azul) !important; }
+
+/* --- OLAS SVG --- */
+.ola-svg {
+    position: absolute; left: 0; width: 100%; overflow: hidden; line-height: 0; z-index: 1;
+}
+.ola-bottom { bottom: -1px; }
+.ola-svg svg { display: block; width: calc(100% + 1.3px); height: 100px; }
+
+/* --- TIPOGRAFÍA --- */
+.titulo-gigante {
+    font-family: var(--fuente-titulo); font-size: 3.5rem; text-align: center;
+    margin-bottom: 20px; z-index: 2;
+}
+.titulo-seccion {
+    font-family: var(--fuente-titulo); font-size: 2.5rem; margin-bottom: 40px;
+    text-align: center; z-index: 2;
+}
+
+/* --- HERO --- */
+.texto-manifiesto {
+    max-width: 700px; width: 90%; text-align: center; margin: 0 auto; z-index: 2;
+}
+.frase-destacada { font-size: 1.5rem; font-weight: bold; margin-bottom: 15px; font-style: italic;}
+.boton-accion {
+    display: inline-block; margin-top: 30px; padding: 15px 30px;
+    background-color: var(--color-azul); color: var(--color-crema);
+    font-family: var(--fuente-titulo); text-decoration: none; font-size: 1.2rem;
+    border-radius: 50px; transition: transform 0.3s;
+    box-shadow: 0 5px 15px rgba(54, 103, 177, 0.4);
+}
+.boton-accion:hover { transform: scale(1.05); }
+
+/* --- MODELOS --- */
+.concepto-burbuja {
+    background: rgba(255,255,255,0.1); padding: 10px 20px; border-radius: 20px;
+    margin-bottom: 30px; border: 1px solid var(--color-crema); text-align: center;
+}
+.galeria-modelos {
+    display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; width: 90%; z-index: 2;
+}
+.item-modelo { text-align: center; width: 200px; }
+.item-modelo img {
+    width: 100%; height: 200px; object-fit: cover; border-radius: 10px; border: 2px solid var(--color-crema);
+}
+.item-modelo h3 { margin-top: 10px; font-size: 1rem; color: var(--color-crema); }
+
+/* --- PROCESO --- */
+.linea-tiempo {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; width: 90%; z-index: 2;
+}
+.paso { text-align: center; width: 140px; }
+.numero-paso {
+    width: 50px; height: 50px; background: var(--color-azul); color: var(--color-crema);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: var(--fuente-titulo); font-size: 1.5rem; margin: 0 auto 10px auto;
+}
+.paso h4 { font-weight: bold; margin-bottom: 5px; }
+
+/* --- CARRUSEL --- */
+.carrusel-contenedor {
+    width: 100%; overflow: hidden; position: relative; padding: 20px 0; z-index: 2;
+}
+.carrusel-track {
+    display: flex; gap: 20px; width: max-content;
+    animation: scroll 20s linear infinite;
+}
+.slide { width: 250px; height: 250px; flex-shrink: 0; }
+.slide img {
+    width: 100%; height: 100%; object-fit: cover; border-radius: 10px;
+    border: 3px solid var(--color-crema);
+}
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- CRUZ DE PIEDRA --- */
+.tarjeta-venta {
+    background: white; border: 2px solid var(--color-azul);
+    padding: 30px; border-radius: 15px; text-align: center;
+    width: 90%; max-width: 500px; z-index: 2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.info-venta h3 { font-family: var(--fuente-titulo); font-size: 1.8rem; margin-bottom: 5px; }
+.boton-compra {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    margin-top: 20px; padding: 12px 25px;
+    background-color: #25D366; /* Verde Whatsapp */
+    color: white; font-weight: bold; text-decoration: none; border-radius: 10px;
+    transition: transform 0.2s;
+}
+.boton-compra:hover { transform: scale(1.05); }
+.icono-btn { width: 20px; filter: brightness(0) invert(1); }
+
+/* --- CARGANDO 2026 --- */
+.contenedor-cargando { display: flex; flex-direction: column; align-items: center; gap: 20px; z-index: 2; }
+.reloj-carga.azul {
+    width: 50px; height: 50px; border: 5px solid rgba(54, 103, 177, 0.2);
+    border-top: 5px solid var(--color-azul); border-radius: 50%;
+    animation: girar 1s linear infinite;
+}
+@keyframes girar { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* --- POR QUÉ ELEGIRNOS (ESTILO NUEVO) --- */
+#nosotros {
+    padding-bottom: 0; /* Pegado al footer */
+}
+.caja-manifiesto {
+    border: 2px solid var(--color-crema);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    margin-bottom: 50px;
+    background: rgba(255,255,255,0.05); /* Sutil fondo */
+    z-index: 2;
+}
+.subtitulo-crema {
+    font-family: var(--fuente-titulo);
+    font-size: 2rem;
+    color: var(--color-crema);
+    margin-bottom: 20px;
+}
+.texto-cuerpo {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--color-crema);
+}
+.separador {
+    width: 50px; height: 2px; background: var(--color-crema);
+    margin: 20px auto;
+}
+.slogan-final {
+    font-family: var(--fuente-titulo);
+    font-size: 1.8rem;
+    color: var(--color-crema);
+    letter-spacing: 2px;
+}
+
+/* --- FOOTER (LOGO BLANCO) --- */
+.seccion-final { padding-top: 50px; padding-bottom: 20px; }
+.logo-gigante { width: 250px; max-width: 70%; margin-bottom: 30px; }
+
+/* ESTO VUELVE EL LOGO BLANCO */
+.logo-blanco {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.pie-pagina { text-align: center; width: 100%; z-index: 2; }
+.iconos-redes img { width: 40px; margin: 10px; transition: transform 0.2s; }
+.iconos-redes img:hover { transform: scale(1.1); }
+.derechos { margin-top: 20px; font-size: 0.8rem; opacity: 0.7; color: var(--color-crema);}
+
+/* --- BOTÓN FLOTANTE --- */
+.boton-flotante-wsp {
+    position: fixed; bottom: 20px; right: 20px; z-index: 100; width: 55px;
+    transition: transform 0.3s; filter: drop-shadow(0 4px 5px rgba(0,0,0,0.2));
+}
+.boton-flotante-wsp:hover { transform: scale(1.1); }
+
+
+/* --- CELULAR --- */
+@media (max-width: 768px) {
+    .titulo-gigante { font-size: 2.5rem; }
+    .titulo-seccion { font-size: 2rem; }
+    .galeria-modelos, .linea-tiempo { flex-direction: column; align-items: center; }
+    .slide { width: 200px; height: 200px; }
+    .caja-manifiesto { padding: 25px; }
+}
+
+/* Animaciones */
+.oculto { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.visible { opacity: 1; transform: translateY(0); }
